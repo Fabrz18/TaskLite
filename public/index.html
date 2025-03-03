@@ -1,11 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskLite</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página moderna con animaciones">
+  <meta name="author" content="Tu Nombre">
+  <title>Index Moderno</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      overflow-x: hidden;
+    }
+    header {
+      background: #1a1a2e;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+      animation: slideDown 1s ease-in-out;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00adb5;
+    }
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem;
+      background: #00adb5;
+      color: white;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #1a1a2e;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      transition: background 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #333;
+      transform: scale(1.1);
+    }
+    section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .icon {
+      font-size: 3rem;
+      color: #00adb5;
+      margin-bottom: 1rem;
+      animation: bounce 2s infinite;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #1a1a2e;
+      color: white;
+      animation: slideUp 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    
+<header>
+  <nav>
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Servicios</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Bienvenido a Nuestra Web</h1>
+  <p>Diseño moderno con animaciones suaves y efectos visuales.</p>
+  <a href="#" class="btn">Descubre Más</a>
+</section>
+
+<section>
+  <i class="fas fa-laptop-code icon"></i>
+  <h2>Desarrollo Web</h2>
+  <p>Soluciones web personalizadas para tu negocio.</p>
+</section>
+
+<footer>
+  <p>© 2025 Mi Página | Todos los derechos reservados</p>
+</footer>
 </body>
 </html>

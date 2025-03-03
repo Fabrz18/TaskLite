@@ -56,6 +56,15 @@
             background-color: #0056b3;
             transition: 0.3s; /*Para que la animación no se vea tan tosca*/
         }
+        .show-password {
+            display: flex;
+            align-items: center;
+            margin-top: -10px;
+            margin-bottom: 15px;
+        }
+        .show-password input {
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
@@ -74,6 +83,10 @@
                 <label for="password">Contraseña:</label>
                 <input type="password" id="password" name="password" required>
             </div>
+            <div class="show-password">
+                <input type="checkbox" id="show-password">
+                <label for="show-password">Mostrar contraseña</label>
+            </div>
             <div class="form-group">
                 <label for="confirm-password">Confirmar contraseña:</label>
                 <input type="password" id="confirm-password" name="confirm-password" required>
@@ -81,5 +94,15 @@
             <button type="submit">Registrarse</button>
         </form>
     </div>
+    <script>
+        document.getElementById('show-password').addEventListener('change', function() {
+            var passwordInput = document.getElementById('password');
+            if (this.checked) {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+        });
+    </script>
 </body>
 </html>
