@@ -4,8 +4,12 @@ header {
     text-align: center;
     padding: 1.5rem 0;
     animation: slideDown 1s ease-in-out;
-    display: relative;
-      width: 100%;
+    width: 100%;
+    
+  }
+  nav {
+    display: flex;
+    padding: 0 1%;
   }
   nav ul {
     list-style: none;
@@ -13,6 +17,10 @@ header {
     justify-content: center;
     gap: 20px;
   }
+  nav #menu {
+    margin: 0 auto;
+  }
+
   nav a {
     text-decoration: none;
     color: white;
