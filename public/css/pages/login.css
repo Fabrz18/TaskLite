@@ -1,0 +1,52 @@
+#Container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7fceb;
+}
+#Container #Login{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7fceb;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+#Container #Login h1 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 3rem;
+}
+#Container #Login form {
+    display: grid;
+    gap: 2em;
+}
+#Container #Login form input {
+    padding: 1em;
+    border: none;
+    border-bottom: 1px solid #0056b3;
+    background-color: #f7fceb;
+}
+#Container #Login form button {
+    padding: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#Container #Login form button:hover {
+    background-color: #0056b3;
+    transition: 0.3s;
+}
+#Container #Login a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.2em;
+    
+    margin: 0 auto;                         
+}
