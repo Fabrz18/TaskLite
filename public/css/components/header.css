@@ -1,0 +1,24 @@
+header {
+    background: #1a1a2e;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    animation: slideDown 1s ease-in-out;
+    display: relative;
+      width: 100%;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #00adb5;
+  }
