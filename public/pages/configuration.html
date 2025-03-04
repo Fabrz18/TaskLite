@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TaskLite | Dashboard</title>
+    <title>Configuración</title>
     <link rel="stylesheet" href="../css/pages/dashboard.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
     <div class="sidebar">
@@ -48,24 +47,11 @@
             <li><a href="/api/logout" id="logout-btn">🚪 Cerrar sesión</a></li>
         </ul>
     </div>
-    <div class="main-content">
-        <header>
-            <h1>Bienvenido a tu Dashboard</h1>
-        </header>
-        <section>
-            <p>Aquí puedes administrar tus tareas de manera eficiente.</p>
-        </section>
-    </div>
-<script>
-    document.getElementById("logout-btn").addEventListener("click", async () => {
-    await fetch("/api/logout", { method: "POST" });
-    localStorage.clear(); // 🔹 Borra cualquier dato en el navegador
-                });
-                    const params = new URLSearchParams(window.location.search);
-                    if (params.has("user")) {
-                        const user = document.getElementById("user");
-                        user.textContent = params.get("user").replace(/_/g, " "); // Convertir _ en espacios
-                    }
-</script>
+    <p>
+        Aquí podrás configurar tu cuenta de usuario.
+        Actualmente se encuentra en desarrollo. (04/03/2025 / 4 de marzo 2025)
+    </p>
+    <a href="/dashboard">Dashboard</a>
+
 </body>
 </html>

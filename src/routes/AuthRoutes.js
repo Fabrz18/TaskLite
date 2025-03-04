@@ -12,22 +12,22 @@ const router = express.Router(); // Usamos Router en vez de app
 
 router.get("/logout", (req, res) => {
     req.session.destroy(() => {
-        res.redirect("/login?message=Logout_exitoso");
+        return  res.redirect("/login?message=Logout_exitoso");
     });
 });
 // 📌 Servir páginas sin mostrar ".html" en la URL
 router.get("/register", (req, res) => {
-    res.sendFile(path.join(__dirname, "../../public/pages/register.html"));
+    return res.sendFile(path.join(__dirname, "../../public/pages/register.html"));
 });
 
 router.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, "../../public/pages/login.html"));
+    return res.sendFile(path.join(__dirname, "../../public/pages/login.html"));
 });
 router.get("/inicio", (req, res) => {
-    res.sendFile(path.join(__dirname, "../../public/index.html"));
+    return res.sendFile(path.join(__dirname, "../../public/index.html"));
 });
 router.get("/dashboard", (req, res) => {
-    res.sendFile(path.join(__dirname, "../../public/pages/dashboard.html"));
+    return res.sendFile(path.join(__dirname, "../../public/pages/dashboard.html"));
 });
 // 📌 REGISTRO de usuario
 router.post("/api/register", async (req, res) => {
@@ -44,10 +44,10 @@ router.post("/api/register", async (req, res) => {
             if (err) {
                 return res.redirect("/register?error=" + encodeURIComponent(err.message));
             }
-            res.redirect("/login?message=Registro_exitoso");
+            return res.redirect("/login?message=Registro_exitoso");
         });
     } catch (error) {
-        res.redirect("/register?error=Error_en_el_servidor");
+        return res.redirect("/register?error=Error_en_el_servidor");
     }
 });
 
@@ -71,7 +71,7 @@ router.post("/api/login", (req, res) => {
 
         // Guardar sesión
         req.session.user = { id: user.userid, username: user.username };
-        res.redirect("/dashboard?message=Login_exitoso");
+        return res.redirect("/dashboard?message=Login_exitoso&user="+user.username);
     });
 });
 

@@ -41,14 +41,23 @@
                 <input type="checkbox" id="show-password">
                 <label for="show-password">Mostrar contraseña</label>
             </div>
-                    <p id="ErrorMessage">Hola</p>
+                    <p id="ErrorMessage"></p>
+                    <p id="Message"></p>
                 
                 <style>
                     #ErrorMessage {
                         display: none;
-                        color: #ff0000;
+                        color: rgb(255, 0, 0);
                         padding: 3%;
-                        background-color: #f0c2c2;
+                        background-color: rgb(240, 194, 194);
+                        margin-top:     2%;
+                        margin-bottom:  2%;
+                    }
+                    #Message {
+                        display: none;
+                        color: rgb(0, 0, 255);
+                        padding: 3%;
+                        background-color: rgb(194, 194, 255);
                         margin-top:     2%;
                         margin-bottom:  2%;
                     }
@@ -61,6 +70,10 @@
                         const errorMessage = document.getElementById("ErrorMessage");
                         errorMessage.textContent = params.get("error").replace(/_/g, " "); // Convertir _ en espacios
                         errorMessage.style.display = "block"; // Mostrar mensaje
+                    }else if (params.has("message")){
+                        const Message = document.getElementById("Message");
+                        Message.textContent = params.get("message").replace(/_/g, " "); // Convertir _ en espacios
+                        Message.style.display = "block"; // Mostrar mensaje
                     }
 
                     // Limpiar la URL después de mostrar el mensaje
@@ -68,7 +81,7 @@
                 </script>
               <button type="submit">Acceder</button>
           </form>
-          <a href="../../public/pages/signup.html">Registrarse</a>
+          <a href="/register">Registrarse</a>
         </div>
         <script>
         async function checkAuth() {

@@ -31,9 +31,9 @@ app.get("/dashboard", (req, res,next) => {
             next(); // ✅ Usuario autenticado, permitir acceso
             
         } else {
-            res.redirect("/login?error=No_estás_autenticado"); // ❌ No autenticado, redirigir al login
+            return res.redirect("/login?error=No_estás_autenticado"); // ❌ No autenticado, redirigir al login
         }
-    res.sendFile(path.join(__dirname, "../public/pages/dashboard.html"));
+    return res.sendFile(path.join(__dirname, "../public/pages/dashboard.html"));
 });
 
 
@@ -43,9 +43,9 @@ app.use(authRoutes);
 // 📌 Verificar autenticación
 app.get("/api/me", (req, res) => {
     if (req.session.user) {
-        res.json({ loggedIn: true, user: req.session.user });
+        return res.json({ loggedIn: true, user: req.session.user });
     } else {
-        res.json({ loggedIn: false });
+        return res.json({ loggedIn: false });
     }
 });
 
@@ -54,9 +54,12 @@ app.get("/api/me", (req, res) => {
 app.get("/api/logout", (req, res) => {
     req.session.destroy(() => {
         res.clearCookie("connect.sid"); // 🔹 Elimina la cookie de sesión (importante)
-        res.redirect("/login?message=Sesion_cerrada");
+        return res.redirect("/login?message=Sesion_cerrada");
     });
 });
 
 // 📌 Iniciar servidor
+console.log("===== Tasklite =====")
+console.log(" ");
 app.listen(PORT, () => console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`));
+
