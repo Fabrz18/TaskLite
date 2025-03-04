@@ -9,14 +9,15 @@
     <link rel="stylesheet" href="../css/pages/login.css">
     <link rel="stylesheet" href="../css/components/header.css">
     <script src="../js/pages/ShowPasswordForm.js"></script>
+    <script src="../js/auth.js"></script>
 </head>
 <body>
     <header>
         <nav >
           <ul id="menu">
-            <li><a href="../../index.html">Inicio</a></li>
-            <li><a href="../../index.html#services">Servicios</a></li>
-              <li><a href="../../index.html#contact">Contacto</a></li>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../index.html#services">Servicios</a></li>
+              <li><a href="../index.html#contact">Contacto</a></li>
           </ul>
           <ul id="register">
             <li><a href="#">Login</a></li>
@@ -27,7 +28,7 @@
       <main>
         <div class="login-container">
           <h1>Ingresar</h1>
-          <form action="#" method="post">
+          <form action="/api/login" method="POST" id="login-form">
               <div class="form-group">
               <label for="username">Nombre de usuario:</label>
               <input type="text" id="username" name="username" required>
@@ -44,8 +45,27 @@
           </form>
           <a href="./signup.html">Registrarse</a>
         </div>
+        <script>
+        async function checkAuth() {
+    const response = await fetch("/api/me");
+    const data = await response.json();
+
+    if (!data.loggedIn) {
+        window.location.href = "/login.html";
+    } else {
+        document.querySelector("#welcome").innerText = `Bienvenido, ${data.user.username}`;
+    }
+}
+async function logout() {
+    await fetch("/api/logout", { method: "POST" });
+    window.location.href = "/login.html";
+}
+
+
+        </script>
       </main>
         
+
       <!--
        <div class="signup-container">
             <div id="form-title"> 
