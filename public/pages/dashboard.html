@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskLite | Dashboard</title>
+    <link rel="stylesheet" href="../css/pages/dashboard.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>TaskLite</h2>
+        <ul>
+            <li><a href="#">🏠 Inicio</a></li>
+            <li><a href="#">📝 Tareas</a></li>
+            <li><a href="#">📊 Reportes</a></li>
+            <li><a href="#">⚙ Configuración</a></li>
+            <li><a href="/api/logout" id="logout-btn">🚪 Cerrar sesión</a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Bienvenido a tu Dashboard</h1>
+        </header>
+        <section>
+            <p>Aquí puedes administrar tus tareas de manera eficiente.</p>
+        </section>
+    </div>
+<script>
+    document.getElementById("logout-btn").addEventListener("click", async () => {
+    await fetch("/api/logout", { method: "POST" });
+    localStorage.clear(); // 🔹 Borra cualquier dato en el navegador
+    window.location.href = "/login";
+});
+
+</script>
+</body>
+</html>
