@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configuración</title>
+    <title>TaskLite | Dashboard | Configuración</title>
     <link rel="stylesheet" href="../css/pages/dashboard.css">
 </head>
 <body>
@@ -52,6 +52,11 @@
         Actualmente se encuentra en desarrollo. (04/03/2025 / 4 de marzo 2025)
     </p>
     <a href="/dashboard">Dashboard</a>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            window.history.pushState({}, "", "/dashboard");
 
+        });
+    </script>
 </body>
 </html>
