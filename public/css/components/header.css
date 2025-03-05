@@ -30,3 +30,12 @@ header {
   nav a:hover {
     color: #00adb5;
   }
+
+  @media (max-width: 481px) {
+    #servicesbtn {
+      display: none;
+    }
+    #contactbtn{
+      display: none;
+    }
+  }
